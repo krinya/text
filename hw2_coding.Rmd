@@ -114,7 +114,12 @@ head(word_counts2, 10)
 Then, we can inspect the results by piloting the word frequencies together:
 
 ```{r, warning=FALSE, message=FALSE}
-ggplot(word_counts2, aes(x = word_counts2[,2], y = word_counts2[,3])) + geom_abline(slope =1, linetype=3) + geom_jitter(alpha = 0.1, alpha = 0.1 , color = "blue") + labs(title = paste(c("Word frequincies of:", colnames(word_counts2)[2], "vs",colnames(word_counts2)[3]), collapse = " "), x = colnames(word_counts2)[2], y = colnames(word_counts2)[3]) + geom_text(aes(label = word), color = "blue", alpha = 0.3) + scale_x_log10(labels = percent_format()) + scale_y_log10(labels = percent_format())
+ggplot(word_counts2, aes(x = word_counts2[,2], y = word_counts2[,3])) +
+geom_abline(slope =1, linetype=3) + geom_jitter(alpha = 0.1, alpha = 0.1 , color = "blue") +
+labs(title = paste(c("Word frequincies of:", colnames(word_counts2)[2], "vs",colnames(word_counts2)[3]), collapse = " "), x = colnames(word_counts2)[2], y = colnames(word_counts2)[3]) +
+geom_text(aes(label = word), color = "blue", alpha = 0.3) +
+scale_x_log10(labels = percent_format()) +
+scale_y_log10(labels = percent_format())
 ```
 
 Brown, miss, sir , round, etc. are frequently used in The Secret Adversary then in The Adventure of Tom Sawyer, while boys, school, water, village are more frequent in Mark Twain's book.
