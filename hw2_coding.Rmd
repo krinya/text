@@ -7,7 +7,7 @@ output: html_document
 
 ## Coding example:
 
-In this exercise I am presenting an example what can you do with the gutenberg R package combining with the tidytext and the tidyverse package. Then do some basic piloting with ggplot.
+In this exercise I am presenting an example what can you do with the gutenbergR package combining with the tidytext and the tidyverse package. Then do some basic piloting with ggplot.
 
 With the help of the tools mentioned above we can see how words in two books are related to each other. In this way we can have some insights how the two books are relate to each other, notice some important words for each book.
 
@@ -54,7 +54,7 @@ head(agatha_christie)
 books <- gutenberg_download(c(74, 1155), meta_fields = "title")
 ```
 
-#### Use the unnest tokens fuction to split the data to words:
+#### Use the unnest tokens function to split the data to words:
 ```{r, , warning=FALSE, message=FALSE}
 words <- books %>% unnest_tokens(word, text) %>% anti_join(stop_words)
 
